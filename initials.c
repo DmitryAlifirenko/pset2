@@ -9,9 +9,9 @@ void setInitials(string s)
     {
         printf("%c", toupper(s[0]));
     }
-    
-    for (int i = 0, n = strlen(s); i < n; i++)
-        if ((s[i-2] == ' ' || s[i-2] != ' ') && s[i-1] == ' ' && s[i] != ' ' && s[i+1] != ' ')
+    int n = strlen(s);
+    for (int i = 0; i < n; i++)
+        if (s[i-1] == ' ' && s[i] != ' ' && s[i+1] != ' ')
         {
             printf("%c", toupper(s[i]));
         }
