@@ -14,6 +14,9 @@ char caesar(char text1, int key1);
 string key;
 string input_text="";
 int keycode_length;
+int firstLowercaseLetter=97;
+int firstUppercaseLetter=65;
+int alphabetLength=26;
 
 int main(int argc, string argv[]){
     if (argc==2)
@@ -94,10 +97,10 @@ void encryptText(int length, int* keycode){
 char caesar(char text1, int key1){
     if(islower(text1))
     {
-        return ((((text1 - 97)+key1)%26)+97);
+        return ((((text1 - firstLowercaseLetter)+key1)%alphabetLength)+firstLowercaseLetter);
     }
     else
     {
-        return ((((text1 - 65)+key1)%26)+65);
+        return ((((text1 - firstUppercaseLetter)+key1)%alphabetLength)+firstUppercaseLetter);
     }
 }
