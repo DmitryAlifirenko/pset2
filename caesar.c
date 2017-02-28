@@ -7,6 +7,9 @@
 string getText();
 int getLength(char* text);
 void encryptText(int length, char* text);
+int firstLowercaseLetter=97;
+int firstUppercaseLetter=65;
+int alphabetLength=26;
 
 int key;
 string txt="";
@@ -45,11 +48,11 @@ void encryptText(int length, char* text){
         {
             if(islower(text[i]))
             {
-                printf("%c", ((((text[i] - 97)+key)%26)+97));
+                printf("%c", ((((text[i] - firstLowercaseLetter)+key)%alphabetLength)+firstLowercaseLetter));
             }
             else
             {
-                printf("%c", ((((text[i] - 65)+key)%26)+65));
+                printf("%c", ((((text[i] - firstUppercaseLetter)+key)%alphabetLength)+firstUppercaseLetter));
             }
         }
         else
